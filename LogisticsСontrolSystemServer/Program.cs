@@ -1,11 +1,17 @@
-var builder = WebApplication.CreateBuilder(args);
+namespace LogisticsÑontrolSystemServer
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
 
-builder.Services.AddControllers();
-
-var app = builder.Build();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Order}/{action=GetAll}/{id?}");
-
-app.Run();
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+}

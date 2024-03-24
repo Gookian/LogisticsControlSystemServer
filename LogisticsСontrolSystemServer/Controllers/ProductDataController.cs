@@ -5,9 +5,9 @@ namespace LogisticsСontrolSystemServer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderController : GenericApiController<Order>
+    public class ProductDataController : GenericApiController<ProductData>
     {
-        public OrderController() : base()
+        public ProductDataController() : base()
         {
         }
     }
