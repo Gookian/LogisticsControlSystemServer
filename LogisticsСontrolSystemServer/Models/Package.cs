@@ -1,12 +1,20 @@
-﻿namespace LogisticsСontrolSystemServer.Models
+﻿using LogisticsСontrolSystemServer.Models.Enum;
+
+namespace LogisticsСontrolSystemServer.Models
 {
     public class Package
     {
         public int PackageId { get; set; }
+
+        [IdTargetValue]
+        [StringValue("Номер")]
         public int Number { get; set; }
+
+        [StringValue("Дедлайн сборки")]
         public DateTime BuildDeadline { get; set; }
 
         // Внешние ключи
+        [StringValue("Состояние")]
         public int PackageStateId { get; set; }
 
         // Ссылки на объекты внешнего ключа

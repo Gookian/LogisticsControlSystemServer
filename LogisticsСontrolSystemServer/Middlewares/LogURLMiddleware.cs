@@ -16,8 +16,8 @@ namespace LogisticsСontrolSystemServer.Middlewares
 
         public async Task InvokeAsync(HttpContext context)
         {
-            _logger.LogInformation($"[{context.Request.Method}] Request URL: {UriHelper.GetDisplayUrl(context.Request)}");
             await this._next(context);
+            _logger.LogInformation($"[{context.Request.Method}] [{DateTime.Now}] Request URL: {UriHelper.GetDisplayUrl(context.Request)} Response code: {context.Response.StatusCode}");
         }
     }
 }
